@@ -1,24 +1,42 @@
 <!doctype html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inicio</title>
-  <link rel="stylesheet" href="/src/css/index.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ReparaTec: plataforma para recuperar, reparar y donar equipos tecnológicos." />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>ReparaTec | Equipos que vuelven a servir</title>
+    <link rel="stylesheet" href="./src/css/index.css" />
 </head>
-
 <body>
-  <include src="header.html"></include>
+    <main>
+        <section class="portada">
+            <div class="contenedor portada__contenido">
+                <img class="portada__logo" src="./src/img/logo.svg" alt="Logo de ReparaTec" width="96" height="96" />
+                <h1 class="portada__titulo">ReparaTec</h1>
+                <p class="portada__descripcion">
+                    Recuperamos, reparamos y donamos computadoras, tabletas y teléfonos, siempre al servicio del cliente.
+                </p>
+                <a class="boton boton--grande" href="login.html">Iniciar sesión</a>
+            </div>
+        </section>
 
-  <main>
-    <h1>Hola</h1>
-    <p id="mensaje"></p>
-  </main>
+        <section class="contenedor pasos" aria-label="Cómo funciona">
+            <article class="tarjeta paso paso--1">
+                <h2>1. Dona</h2>
+                <p>Personas y empresas registran los equipos que ya no usan.</p>
+            </article>
+            <article class="tarjeta paso paso--2">
+                <h2>2. Reparamos</h2>
+                <p>Los técnicos diagnostican cada equipo y lo reparan.</p>
+            </article>
+            <article class="tarjeta paso paso--3">
+                <h2>3. Entregamos</h2>
+                <p>El equipo llega a quien lo necesita para estudiar o trabajar.</p>
+            </article>
+        </section>
+    </main>
 
-  <include src="footer.html"></include>
-
-  <script type="module" src="/src/js/main.js"></script>
+    <include src="footer.html"></include>
 </body>
-
 </html>

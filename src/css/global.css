@@ -1,3 +1,366 @@
+:root {
+    --color-primario: #0f766e;
+    --color-primario-oscuro: #115e59;
+    --color-primario-claro: #ccfbf1;
+    --color-fondo: #f8fafc;
+    --color-superficie: #ffffff;
+    --color-texto: #1e293b;
+    --color-texto-suave: #64748b;
+    --color-borde: #e2e8f0;
+    --color-error: #b91c1c;
+    --color-exito: #15803d;
+    --color-pie: #cbd5e1;
+
+    --fuente: Arial, Helvetica, sans-serif;
+    --espacio: 16px;
+}
+
 * {
-  background-color: rgb(255, 254, 247);
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fuente);
+    font-size: 16px;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+h1,
+h2,
+h3 {
+    margin: 0 0 var(--espacio);
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+a {
+    color: var(--color-primario);
+}
+
+a:hover {
+    color: var(--color-primario-oscuro);
+}
+
+/* ===== Contenedor ===== */
+.contenedor {
+    width: 90%;
+    margin: 0 auto;
+    padding: 32px 0;
+}
+
+/* Fila con el título de la página y el botón de agregar.
+   El botón se posiciona a la derecha respecto a este contenedor. */
+.encabezado-pagina {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.encabezado-pagina .boton {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.tarjeta {
+    padding: 24px;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+}
+
+/* ===== Botones ===== */
+.boton {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid var(--color-primario);
+    background-color: var(--color-primario);
+    color: var(--color-superficie);
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.boton:hover {
+    border-color: var(--color-primario-oscuro);
+    background-color: var(--color-primario-oscuro);
+    color: var(--color-superficie);
+}
+
+.boton--secundario {
+    background-color: var(--color-superficie);
+    color: var(--color-primario);
+}
+
+.boton--secundario:hover {
+    background-color: var(--color-primario-claro);
+    color: var(--color-primario-oscuro);
+}
+
+.boton--grande {
+    padding: 14px 32px;
+    font-size: 18px;
+}
+
+/* ===== Tablas ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+}
+
+th,
+td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--color-borde);
+    text-align: left;
+}
+
+th {
+    background-color: var(--color-primario-claro);
+    color: var(--color-primario-oscuro);
+}
+
+tbody tr:hover {
+    background-color: var(--color-fondo);
+}
+
+/* ===== Detalle ===== */
+.datos {
+    margin: 0;
+}
+
+.datos dt {
+    font-weight: bold;
+    color: var(--color-texto-suave);
+}
+
+.datos dd {
+    margin: 0 0 12px;
+}
+
+/* ===== Formularios ===== */
+.formulario {
+    width: 60%;
+}
+
+.campo {
+    margin-bottom: var(--espacio);
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--color-borde);
+    background-color: var(--color-superficie);
+    color: var(--color-texto);
+    font-family: inherit;
+    font-size: 16px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--color-primario);
+}
+
+.obligatorio {
+    color: var(--color-error);
+}
+
+.formulario__acciones .boton {
+    margin-right: 12px;
+}
+
+/* ===== Mensajes ===== */
+.mensaje {
+    margin: var(--espacio) 0;
+    color: var(--color-texto-suave);
+    text-align: center;
+}
+
+.mensaje--error {
+    color: var(--color-error);
+    font-weight: bold;
+}
+
+.mensaje--exito {
+    color: var(--color-exito);
+    font-weight: bold;
+}
+
+/* ===== Encabezado y menú ===== */
+
+/* sticky: se queda pegado arriba al hacer scroll */
+.encabezado {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--color-primario-oscuro);
+}
+
+/* relative: sirve de referencia para el menú y el botón con absolute */
+.encabezado__contenido {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.marca {
+    display: inline-block;
+    padding: 16px 0;
+    color: var(--color-superficie);
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.marca:hover {
+    color: var(--color-superficie);
+}
+
+.marca img {
+    position: relative;
+    top: 8px;
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+}
+
+/* En escritorio el botón del menú no se ve */
+.menu-boton {
+    display: none;
+}
+
+/* absolute: el menú se coloca a la derecha del encabezado */
+.menu {
+    position: absolute;
+    top: 14px;
+    right: 0;
+}
+
+.menu__enlace {
+    display: inline-block;
+    padding: 8px 12px;
+    color: var(--color-superficie);
+    text-decoration: none;
+}
+
+.menu__enlace:hover,
+.menu__enlace[aria-current='page'] {
+    background-color: var(--color-primario);
+    color: var(--color-superficie);
+}
+
+.menu__enlace--salir {
+    border: 1px solid var(--color-primario-claro);
+}
+
+/* ===== Pie de página ===== */
+.pie {
+    padding: 24px var(--espacio);
+    background-color: var(--color-texto);
+    color: var(--color-pie);
+    font-size: 14px;
+    text-align: center;
+}
+
+.pie p {
+    margin: 4px 0;
+}
+
+/* ===== Pantallas chicas (tablet y celular) ===== */
+@media (max-width: 991px) {
+    /* El botón del menú aparece a la derecha */
+    .menu-boton {
+        display: inline-block;
+        position: absolute;
+        top: 16px;
+        right: 0;
+        padding: 6px 14px;
+        border: 1px solid var(--color-primario-claro);
+        background-color: var(--color-primario-oscuro);
+        color: var(--color-superficie);
+        font-family: inherit;
+        font-size: 16px;
+    }
+
+    /* El menú vuelve al flujo normal y se oculta hasta que se abra */
+    .menu {
+        display: none;
+        position: static;
+        padding-bottom: 12px;
+    }
+
+    .menu--abierto {
+        display: block;
+    }
+
+    /* Cada enlace ocupa su propia línea */
+    .menu__enlace {
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    .encabezado-pagina .boton {
+        position: static;
+    }
+
+    .formulario {
+        width: 100%;
+    }
+
+    /* Tablas: cada fila se vuelve una tarjeta con sus datos uno debajo del otro */
+    table,
+    tbody,
+    tr,
+    td {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    table {
+        border: none;
+        background-color: var(--color-fondo);
+    }
+
+    tr {
+        margin-bottom: 12px;
+        padding: 8px 0;
+        border: 1px solid var(--color-borde);
+        background-color: var(--color-superficie);
+    }
+
+    td {
+        padding: 4px 12px;
+        border-bottom: none;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
 }

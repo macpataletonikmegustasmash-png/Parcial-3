@@ -1,7 +1,21 @@
 <header class="encabezado">
-    <nav class="menu">
-        <a href="index.html">Inicio</a>
-        <a href="reportes.html">Reportes</a>
-        <a href="contact.html">Contacto</a>
-    </nav>
+    <div class="encabezado__contenido">
+        <a class="marca" href="home.html">
+            <img src="./src/img/logo.svg" alt="" width="32" height="32" />
+            ReparaTec
+        </a>
+        <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu-principal">
+            Menú
+        </button>
+        <nav class="menu" id="menu-principal" aria-label="Menú principal">
+            <a class="menu__enlace" href="home.html">Inicio</a>
+            <a class="menu__enlace" href="equipos.html">Equipos</a>
+            <a class="menu__enlace" href="donaciones.html">Donaciones</a>
+            <a class="menu__enlace" href="reparaciones.html">Reparaciones</a>
+            <a class="menu__enlace" href="solicitudes.html">Solicitudes</a>
+            <a class="menu__enlace" href="usuarios.html">Usuarios</a>
+            <a class="menu__enlace menu__enlace--salir" href="index.html">Salir</a>
+        </nav>
+    </div>
 </header>
+<script type="module" src="./src/js/menu.js"></script>
