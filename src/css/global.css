@@ -1,15 +1,16 @@
 :root {
-    --color-primario: #0f766e;
-    --color-primario-oscuro: #115e59;
-    --color-primario-claro: #ccfbf1;
-    --color-fondo: #f8fafc;
+    --color-primario: #1d4ed8;
+    --color-primario-oscuro: #1e3a8a;
+    --color-primario-claro: #dbeafe;
+    --color-fondo: #f1f5f9;
     --color-superficie: #ffffff;
     --color-texto: #1e293b;
     --color-texto-suave: #64748b;
-    --color-borde: #e2e8f0;
+    --color-borde: #cbd5e1;
+    --color-plata: #c0c7d1;
     --color-error: #b91c1c;
     --color-exito: #15803d;
-    --color-pie: #cbd5e1;
+    --color-pie: #c0c7d1;
 
     --fuente: Arial, Helvetica, sans-serif;
     --espacio: 16px;
@@ -218,6 +219,7 @@ textarea:focus {
     top: 0;
     z-index: 10;
     background-color: var(--color-primario-oscuro);
+    border-bottom: 3px solid var(--color-plata);
 }
 
 /* relative: sirve de referencia para el menú y el botón con absolute */
@@ -274,7 +276,7 @@ textarea:focus {
 }
 
 .menu__enlace--salir {
-    border: 1px solid var(--color-primario-claro);
+    border: 1px solid var(--color-plata);
 }
 
 /* ===== Pie de página ===== */
@@ -299,7 +301,7 @@ textarea:focus {
         top: 16px;
         right: 0;
         padding: 6px 14px;
-        border: 1px solid var(--color-primario-claro);
+        border: 1px solid var(--color-plata);
         background-color: var(--color-primario-oscuro);
         color: var(--color-superficie);
         font-family: inherit;
