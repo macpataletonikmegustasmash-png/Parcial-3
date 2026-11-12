@@ -1,0 +1,27 @@
+@import './global.css';
+
+.home__intro {
+    margin: 0 0 24px;
+    color: var(--color-texto-suave);
+}
+
+/* Cada grupo de módulos es una tarjeta, una debajo de otra */
+.grupo {
+    margin-bottom: 24px;
+}
+
+.grupo h2 {
+    margin-bottom: 4px;
+    color: var(--color-primario-oscuro);
+    font-size: 20px;
+}
+
+.grupo__texto {
+    margin: 0 0 var(--espacio);
+    color: var(--color-texto-suave);
+}
+
+/* Los botones son inline-block: se acomodan en fila y bajan de línea si no caben */
+.grupo .boton {
+    margin: 0 8px 8px 0;
+}
