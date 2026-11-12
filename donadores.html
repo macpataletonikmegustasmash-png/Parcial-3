@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>Donadores | ReparaTec</title>
+    <link rel="stylesheet" href="./src/css/donadores.css" />
+</head>
+<body>
+    <include src="header.html"></include>
+
+    <main class="contenedor">
+        <div class="encabezado-pagina">
+            <h1>Donadores</h1>
+            <a class="boton" href="donador-form.html">Agregar donador</a>
+        </div>
+
+        <p class="mensaje" id="mensaje">Cargando donadores...</p>
+
+        <table id="tabla" hidden>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Tipo</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </main>
+
+    <include src="footer.html"></include>
+    <script type="module" src="./src/js/donadores.js"></script>
+</body>
+</html>
