@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>Formulario de reparación | ReparaTec</title>
+    <link rel="stylesheet" href="./src/css/reparacion-form.css" />
+</head>
+<body>
+    <include src="header.html"></include>
+
+    <main class="contenedor">
+        <h1 id="titulo-formulario">Agregar reparación</h1>
+
+        <form class="formulario tarjeta" id="formulario" novalidate>
+            <div class="campo">
+                <label for="id_diagnostico">Diagnóstico <span class="obligatorio">*</span></label>
+                <select id="id_diagnostico" name="id_diagnostico" required>
+                    <option value="">Selecciona un diagnóstico</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="id_tecnico">Técnico <span class="obligatorio">*</span></label>
+                <select id="id_tecnico" name="id_tecnico" required>
+                    <option value="">Selecciona un técnico</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="descripcion_trabajo">Descripción del trabajo <span class="obligatorio">*</span></label>
+                <textarea id="descripcion_trabajo" name="descripcion_trabajo" rows="3" maxlength="300" required></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="fecha_inicio">Fecha de inicio <span class="obligatorio">*</span></label>
+                <input type="date" id="fecha_inicio" name="fecha_inicio" required />
+            </div>
+
+            <div class="campo">
+                <label for="fecha_termino">Fecha de término</label>
+                <input type="date" id="fecha_termino" name="fecha_termino" />
+            </div>
+
+            <div class="campo">
+                <label for="costo_estimado">Costo estimado en pesos <span class="obligatorio">*</span></label>
+                <input type="number" id="costo_estimado" name="costo_estimado" min="0" step="0.01" required />
+            </div>
+
+            <div class="campo">
+                <label for="costo_final">Costo final en pesos</label>
+                <input type="number" id="costo_final" name="costo_final" min="0" step="0.01" />
+            </div>
+
+            <div class="campo">
+                <label for="estado_reparacion">Estado <span class="obligatorio">*</span></label>
+                <select id="estado_reparacion" name="estado_reparacion" required>
+                    <option value="">Selecciona un estado</option>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="En proceso">En proceso</option>
+                    <option value="Terminada">Terminada</option>
+                </select>
+            </div>
+
+            <p class="mensaje" id="mensaje"></p>
+
+            <div class="formulario__acciones">
+                <button class="boton" type="submit">Guardar</button>
+                <a class="boton boton--secundario" href="reparaciones.html">Cancelar</a>
+            </div>
+        </form>
+    </main>
+
+    <include src="footer.html"></include>
+    <script type="module" src="./src/js/reparacion-form.js"></script>
+</body>
+</html>

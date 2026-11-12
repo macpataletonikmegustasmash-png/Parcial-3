@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>Componentes | ReparaTec</title>
+    <link rel="stylesheet" href="./src/css/componentes.css" />
+</head>
+<body>
+    <include src="header.html"></include>
+
+    <main class="contenedor">
+        <div class="encabezado-pagina">
+            <h1>Componentes</h1>
+            <a class="boton" href="componente-form.html">Agregar componente</a>
+        </div>
+
+        <p class="mensaje" id="mensaje">Cargando componentes...</p>
+
+        <table id="tabla" hidden>
+            <thead>
+                <tr>
+                    <th>Componente</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Precio ($)</th>
+                    <th>Existencia</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </main>
+
+    <include src="footer.html"></include>
+    <script type="module" src="./src/js/componentes.js"></script>
+</body>
+</html>
