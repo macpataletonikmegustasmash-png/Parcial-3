@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>Técnicos | ReparaTec</title>
+    <link rel="stylesheet" href="./src/css/tecnicos.css" />
+</head>
+<body>
+    <include src="header.html"></include>
+
+    <main class="contenedor">
+        <div class="encabezado-pagina">
+            <h1>Técnicos</h1>
+            <a class="boton" href="tecnico-form.html">Agregar técnico</a>
+        </div>
+
+        <p class="mensaje" id="mensaje">Cargando técnicos...</p>
+
+        <table id="tabla" hidden>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Especialidad</th>
+                    <th>Teléfono</th>
+                    <th>Disponibilidad</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </main>
+
+    <include src="footer.html"></include>
+    <script type="module" src="./src/js/tecnicos.js"></script>
+</body>
+</html>

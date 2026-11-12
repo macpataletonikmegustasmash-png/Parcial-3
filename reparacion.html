@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>Detalle de la reparación | ReparaTec</title>
+    <link rel="stylesheet" href="./src/css/reparacion.css" />
+</head>
+<body>
+    <include src="header.html"></include>
+
+    <main class="contenedor">
+        <p class="mensaje" id="mensaje">Cargando reparación...</p>
+
+        <section class="tarjeta" id="detalle" hidden>
+            <h1>Reparación #<span data-campo="id"></span></h1>
+
+            <dl class="datos">
+                <dt>Trabajo realizado</dt>
+                <dd data-campo="descripcion_trabajo"></dd>
+                <dt>Diagnóstico</dt>
+                <dd data-campo="diagnostico"></dd>
+                <dt>Técnico</dt>
+                <dd data-campo="tecnico"></dd>
+                <dt>Fecha de inicio</dt>
+                <dd data-campo="fecha_inicio"></dd>
+                <dt>Fecha de término</dt>
+                <dd data-campo="fecha_termino"></dd>
+                <dt>Costo estimado</dt>
+                <dd data-campo="costo_estimado"></dd>
+                <dt>Costo final</dt>
+                <dd data-campo="costo_final"></dd>
+                <dt>Estado</dt>
+                <dd data-campo="estado_reparacion"></dd>
+            </dl>
+
+            <h2>Componentes utilizados</h2>
+            <p class="mensaje" id="mensaje-componentes">Cargando componentes...</p>
+            <table id="tabla-componentes" hidden>
+                <thead>
+                    <tr>
+                        <th>Componente</th>
+                        <th>Cantidad</th>
+                        <th>Costo unitario ($)</th>
+                        <th>Subtotal ($)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="formulario__acciones">
+                <a class="boton" id="enlace-editar" href="reparacion-form.html">Editar</a>
+                <a class="boton boton--secundario" href="reparaciones.html">Volver a la lista</a>
+            </div>
+        </section>
+    </main>
+
+    <include src="footer.html"></include>
+    <script type="module" src="./src/js/reparacion.js"></script>
+</body>
+</html>

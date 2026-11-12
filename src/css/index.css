@@ -1,5 +1,92 @@
-@import "./global.css";
+@import './global.css';
 
-h1 {
-  color: #1d4ed8;
+/* ===== Portada ===== */
+.portada {
+    background-color: var(--color-primario-claro);
+    text-align: center;
+}
+
+.portada__contenido {
+    padding: 64px 0;
+}
+
+/* display: block + margin auto centra la imagen */
+.portada__logo {
+    display: block;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto var(--espacio);
+}
+
+.portada__titulo {
+    margin-bottom: var(--espacio);
+    color: var(--color-primario-oscuro);
+    font-size: 52px;
+}
+
+.portada__descripcion {
+    width: 60%;
+    margin: 0 auto 32px;
+    color: var(--color-texto-suave);
+    font-size: 18px;
+}
+
+/* ===== Cómo funciona =====
+   relative en el contenedor y absolute en cada tarjeta:
+   las tres tarjetas se acomodan en una fila. */
+.pasos {
+    position: relative;
+    height: 210px;
+}
+
+.paso {
+    position: absolute;
+    top: 32px;
+    width: 31%;
+    height: 150px;
+}
+
+.paso--1 {
+    left: 0;
+}
+
+.paso--2 {
+    left: 34.5%;
+}
+
+.paso--3 {
+    right: 0;
+}
+
+.paso h2 {
+    margin-bottom: 8px;
+    color: var(--color-primario);
+    font-size: 20px;
+}
+
+.paso p {
+    margin: 0;
+}
+
+/* ===== Pantallas chicas ===== */
+@media (max-width: 991px) {
+    .portada__titulo {
+        font-size: 38px;
+    }
+
+    .portada__descripcion {
+        width: 100%;
+    }
+
+    /* Las tarjetas regresan al flujo normal, una debajo de otra */
+    .pasos {
+        height: auto;
+    }
+
+    .paso {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin-bottom: var(--espacio);
+    }
 }

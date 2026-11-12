@@ -1,0 +1,10 @@
+@import './global.css';
+
+/* (Nota de Pat) margin-top: Se separa del título de la página */
+#detalle h2 {
+    margin-top: 32px; 
+}
+
+#detalle .formulario__acciones {
+    margin-top: 24px;
+}
