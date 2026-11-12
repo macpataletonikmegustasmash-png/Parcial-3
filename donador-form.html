@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>Formulario de donador | ReparaTec</title>
+    <link rel="stylesheet" href="./src/css/donador-form.css" />
+</head>
+<body>
+    <include src="header.html"></include>
+
+    <main class="contenedor">
+        <h1 id="titulo-formulario">Agregar donador</h1>
+
+        <form class="formulario tarjeta" id="formulario" novalidate>
+            <div class="campo">
+                <label for="nombre">Nombre o razón social <span class="obligatorio">*</span></label>
+                <input type="text" id="nombre" name="nombre" maxlength="80" required />
+            </div>
+
+            <div class="campo">
+                <label for="apellido">Apellido <span class="obligatorio">*</span></label>
+                <input type="text" id="apellido" name="apellido" maxlength="50" required />
+            </div>
+
+            <div class="campo">
+                <label for="tipo_donador">Tipo de donador <span class="obligatorio">*</span></label>
+                <select id="tipo_donador" name="tipo_donador" required>
+                    <option value="">Selecciona un tipo</option>
+                    <option value="Persona">Persona</option>
+                    <option value="Empresa">Empresa</option>
+                    <option value="Institución">Institución</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="telefono">Teléfono (10 dígitos) <span class="obligatorio">*</span></label>
+                <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" title="Escribe 10 dígitos, sin espacios" required />
+            </div>
+
+            <div class="campo">
+                <label for="correo">Correo <span class="obligatorio">*</span></label>
+                <input type="email" id="correo" name="correo" required />
+            </div>
+
+            <div class="campo">
+                <label for="direccion">Dirección <span class="obligatorio">*</span></label>
+                <textarea id="direccion" name="direccion" rows="2" maxlength="150" required></textarea>
+            </div>
+
+            <p class="mensaje" id="mensaje"></p>
+
+            <div class="formulario__acciones">
+                <button class="boton" type="submit">Guardar</button>
+                <a class="boton boton--secundario" href="donadores.html">Cancelar</a>
+            </div>
+        </form>
+    </main>
+
+    <include src="footer.html"></include>
+    <script type="module" src="./src/js/donador-form.js"></script>
+</body>
+</html>

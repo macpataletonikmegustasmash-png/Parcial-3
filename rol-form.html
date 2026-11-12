@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>Formulario de rol | ReparaTec</title>
+    <link rel="stylesheet" href="./src/css/rol-form.css" />
+</head>
+<body>
+    <include src="header.html"></include>
+
+    <main class="contenedor">
+        <h1 id="titulo-formulario">Agregar rol</h1>
+
+        <form class="formulario tarjeta" id="formulario" novalidate>
+            <div class="campo">
+                <label for="nombre_rol">Nombre del rol <span class="obligatorio">*</span></label>
+                <input type="text" id="nombre_rol" name="nombre_rol" maxlength="40" required />
+            </div>
+
+            <div class="campo">
+                <label for="descripcion">Descripción <span class="obligatorio">*</span></label>
+                <textarea id="descripcion" name="descripcion" rows="3" maxlength="200" required></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="estado">Estado <span class="obligatorio">*</span></label>
+                <select id="estado" name="estado" required>
+                    <option value="">Selecciona un estado</option>
+                    <option value="Activo">Activo</option>
+                    <option value="Inactivo">Inactivo</option>
+                </select>
+            </div>
+
+            <p class="mensaje" id="mensaje"></p>
+
+            <div class="formulario__acciones">
+                <button class="boton" type="submit">Guardar</button>
+                <a class="boton boton--secundario" href="roles.html">Cancelar</a>
+            </div>
+        </form>
+    </main>
