@@ -36,6 +36,21 @@
     text-align: center;
 }
 
+.error {
+    padding: 0.7rem 0.85rem;
+    border-radius: 10px;
+    background: 
+#fbeaea;
+    color: 
+#9b1c1c;
+    font-size: 0.9rem;
+}
+
+.acceso:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
 @media (max-width: 991px) {
     .acceso {
         width: 100%;
