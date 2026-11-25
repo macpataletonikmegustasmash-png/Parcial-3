@@ -1,32 +1,36 @@
 import {
     obtenerReparacion,
-    obtenerTecnico,
     obtenerDiagnostico,
+    obtenerEquipo,
+    obtenerTecnico,
     obtenerComponente,
     obtenerDetallesDeReparacion,
 } from './datos.js'
 import { mostrarDetalle, mostrarLista } from './helpers.js'
 
-
+// La reparación solo guarda ID_diagnostico. Del diagnóstico salen el equipo y el técnico.
 async function conNombres(reparacion) {
-    const tecnico = await obtenerTecnico(reparacion.id_tecnico)
-    const diagnostico = await obtenerDiagnostico(reparacion.id_diagnostico)
+    const diagnostico = await obtenerDiagnostico(reparacion.ID_diagnostico)
+    const equipo = diagnostico ? await obtenerEquipo(diagnostico.ID_equipo) : null
+    const tecnico = diagnostico ? await obtenerTecnico(diagnostico.ID_tecnico) : null
     return {
         ...reparacion,
-        tecnico: tecnico ? `${tecnico.nombre} ${tecnico.apellido}` : 'Sin asignar',
-        diagnostico: diagnostico ? diagnostico.problema_detectado : 'Sin diagnóstico',
-        fecha_termino: reparacion.fecha_termino ?? 'Sin terminar',
-        costo_estimado: `$${reparacion.costo_estimado}`,
-        costo_final: reparacion.costo_final === null ? 'Pendiente' : `$${reparacion.costo_final}`,
+        diagnostico: diagnostico ? diagnostico.problemaDiagnostico : 'Sin diagnóstico',
+        equipo: equipo ? `${equipo.marcaEquipo} ${equipo.modeloEquipo}` : 'Sin equipo',
+        tecnico: tecnico ? `Técnico #${tecnico.id} · ${tecnico.especialidadTecnico}` : 'Sin técnico',
+        fechaTerminoReparacion: reparacion.fechaTerminoReparacion ?? 'Sin terminar',
+        costoEstimadoReparacion: `$${reparacion.costoEstimadoReparacion}`,
+        costoFinalReparacion: reparacion.costoFinalReparacion === null ? 'Pendiente' : `$${reparacion.costoFinalReparacion}`,
     }
 }
 
+// Cada detalle guarda ID_componente; se agrega el nombre y el subtotal.
 async function conComponente(detalle) {
-    const componente = await obtenerComponente(detalle.id_componente)
+    const componente = await obtenerComponente(detalle.ID_componente)
     return {
         ...detalle,
-        componente: componente ? componente.nombre_componente : 'Componente eliminado',
-        subtotal: detalle.cantidad_utilizada * detalle.costo_unitario,
+        componente: componente ? componente.nombreComponente : 'Componente eliminado',
+        subtotal: detalle.cantidadUtilizadaDetalle * detalle.costoUnitarioDetalle,
     }
 }
 
@@ -39,9 +43,10 @@ const reparacion = await mostrarDetalle({
 if (reparacion) {
     document.querySelector('#enlace-editar').href = `reparacion-form.html?id=${reparacion.id}`
 
+    // Segunda tabla de la página: usa sus propios ids.
     await mostrarLista({
         obtener: () => obtenerDetallesDeReparacion(reparacion.id),
-        columnas: ['componente', 'cantidad_utilizada', 'costo_unitario', 'subtotal'],
+        columnas: ['componente', 'cantidadUtilizadaDetalle', 'costoUnitarioDetalle', 'subtotal'],
         vacio: 'Esta reparación no usó componentes.',
         transformar: conComponente,
         tabla: '#tabla-componentes',

@@ -3,7 +3,7 @@ import { mostrarLista } from './helpers.js'
 
 await mostrarLista({
     obtener: obtenerComponentes,
-    columnas: ['nombre_componente', 'marca', 'modelo', 'precio', 'existencia'],
+    columnas: ['nombreComponente', 'marcaComponente', 'modeloComponente', 'precioComponente', 'existenciaComponente'],
     detalle: 'componente.html',
     vacio: 'Todavía no hay componentes registrados.',
 })

@@ -15,47 +15,40 @@
 
         <form class="formulario tarjeta" id="formulario" novalidate>
             <div class="campo">
-                <label for="id_diagnostico">Diagnóstico <span class="obligatorio">*</span></label>
-                <select id="id_diagnostico" name="id_diagnostico" required>
+                <label for="ID_diagnostico">Diagnóstico <span class="obligatorio">*</span></label>
+                <select id="ID_diagnostico" name="ID_diagnostico" required>
                     <option value="">Selecciona un diagnóstico</option>
                 </select>
             </div>
 
             <div class="campo">
-                <label for="id_tecnico">Técnico <span class="obligatorio">*</span></label>
-                <select id="id_tecnico" name="id_tecnico" required>
-                    <option value="">Selecciona un técnico</option>
-                </select>
+                <label for="descripcionReparacion">Descripción del trabajo <span class="obligatorio">*</span></label>
+                <textarea id="descripcionReparacion" name="descripcionReparacion" rows="3" maxlength="200" required></textarea>
             </div>
 
             <div class="campo">
-                <label for="descripcion_trabajo">Descripción del trabajo <span class="obligatorio">*</span></label>
-                <textarea id="descripcion_trabajo" name="descripcion_trabajo" rows="3" maxlength="300" required></textarea>
+                <label for="fechaInicioReparacion">Fecha de inicio <span class="obligatorio">*</span></label>
+                <input type="date" id="fechaInicioReparacion" name="fechaInicioReparacion" required />
             </div>
 
             <div class="campo">
-                <label for="fecha_inicio">Fecha de inicio <span class="obligatorio">*</span></label>
-                <input type="date" id="fecha_inicio" name="fecha_inicio" required />
+                <label for="fechaTerminoReparacion">Fecha de término</label>
+                <input type="date" id="fechaTerminoReparacion" name="fechaTerminoReparacion" />
             </div>
 
             <div class="campo">
-                <label for="fecha_termino">Fecha de término</label>
-                <input type="date" id="fecha_termino" name="fecha_termino" />
+                <label for="costoEstimadoReparacion">Costo estimado en pesos <span class="obligatorio">*</span></label>
+                <input type="number" id="costoEstimadoReparacion" name="costoEstimadoReparacion" min="0" step="1" required />
             </div>
 
             <div class="campo">
-                <label for="costo_estimado">Costo estimado en pesos <span class="obligatorio">*</span></label>
-                <input type="number" id="costo_estimado" name="costo_estimado" min="0" step="0.01" required />
+                <label for="costoFinalReparacion">Costo final en pesos</label>
+                <input type="number" id="costoFinalReparacion" name="costoFinalReparacion" min="0" step="1" />
             </div>
 
             <div class="campo">
-                <label for="costo_final">Costo final en pesos</label>
-                <input type="number" id="costo_final" name="costo_final" min="0" step="0.01" />
-            </div>
-
-            <div class="campo">
-                <label for="estado_reparacion">Estado <span class="obligatorio">*</span></label>
-                <select id="estado_reparacion" name="estado_reparacion" required>
+                <label for="estadoReparacion">Estado <span class="obligatorio">*</span></label>
+                <select id="estadoReparacion" name="estadoReparacion" required>
                     <option value="">Selecciona un estado</option>
                     <option value="Pendiente">Pendiente</option>
                     <option value="En proceso">En proceso</option>

@@ -1,8 +1,9 @@
-import { obtenerReparacion, obtenerDiagnosticos, obtenerTecnicos } from './datos.js'
+import { obtenerReparacion, obtenerDiagnosticos } from './datos.js'
 import { leerId, llenarSelect, prepararFormulario } from './helpers.js'
 
-llenarSelect('#id_diagnostico', await obtenerDiagnosticos(), (diagnostico) => `#${diagnostico.id} - ${diagnostico.problema_detectado}`)
-llenarSelect('#id_tecnico', await obtenerTecnicos(), (tecnico) => `${tecnico.nombre} ${tecnico.apellido}`)
+// El técnico ya no se elige aquí: viene del diagnóstico.
+// Primero se llena el select, para que en modo editar ya exista la opción a marcar.
+llenarSelect('#ID_diagnostico', await obtenerDiagnosticos(), (diagnostico) => `#${diagnostico.id} - ${diagnostico.problemaDiagnostico}`)
 
 if (leerId()) {
     document.querySelector('#titulo-formulario').textContent = 'Editar reparación'
