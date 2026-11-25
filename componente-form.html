@@ -15,33 +15,38 @@
 
         <form class="formulario tarjeta" id="formulario" novalidate>
             <div class="campo">
-                <label for="nombre_componente">Nombre del componente <span class="obligatorio">*</span></label>
-                <input type="text" id="nombre_componente" name="nombre_componente" maxlength="80" required />
+                <label for="nombreComponente">Nombre del componente <span class="obligatorio">*</span></label>
+                <input type="text" id="nombreComponente" name="nombreComponente" maxlength="50" required />
             </div>
 
             <div class="campo">
-                <label for="marca">Marca <span class="obligatorio">*</span></label>
-                <input type="text" id="marca" name="marca" maxlength="40" required />
+                <label for="marcaComponente">Marca <span class="obligatorio">*</span></label>
+                <input type="text" id="marcaComponente" name="marcaComponente" maxlength="30" required />
             </div>
 
             <div class="campo">
-                <label for="modelo">Modelo <span class="obligatorio">*</span></label>
-                <input type="text" id="modelo" name="modelo" maxlength="40" required />
+                <label for="modeloComponente">Modelo <span class="obligatorio">*</span></label>
+                <input type="text" id="modeloComponente" name="modeloComponente" maxlength="30" required />
             </div>
 
             <div class="campo">
-                <label for="descripcion">Descripción</label>
-                <textarea id="descripcion" name="descripcion" rows="2" maxlength="200"></textarea>
+                <label for="descripcionComponente">Descripción</label>
+                <textarea id="descripcionComponente" name="descripcionComponente" rows="2" maxlength="200"></textarea>
             </div>
 
             <div class="campo">
-                <label for="precio">Precio en pesos <span class="obligatorio">*</span></label>
-                <input type="number" id="precio" name="precio" min="0" step="0.01" required />
+                <label for="precioComponente">Precio en pesos <span class="obligatorio">*</span></label>
+                <input type="number" id="precioComponente" name="precioComponente" min="0" step="1" required />
             </div>
 
             <div class="campo">
-                <label for="existencia">Existencia (piezas) <span class="obligatorio">*</span></label>
-                <input type="number" id="existencia" name="existencia" min="0" step="1" required />
+                <label for="existenciaComponente">Existencia <span class="obligatorio">*</span></label>
+                <select id="existenciaComponente" name="existenciaComponente" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="Disponible">Disponible</option>
+                    <option value="Pocas piezas">Pocas piezas</option>
+                    <option value="Agotado">Agotado</option>
+                </select>
             </div>
 
             <p class="mensaje" id="mensaje"></p>
