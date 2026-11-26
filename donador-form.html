@@ -15,18 +15,8 @@
 
         <form class="formulario tarjeta" id="formulario" novalidate>
             <div class="campo">
-                <label for="nombre">Nombre o razón social <span class="obligatorio">*</span></label>
-                <input type="text" id="nombre" name="nombre" maxlength="80" required />
-            </div>
-
-            <div class="campo">
-                <label for="apellido">Apellido <span class="obligatorio">*</span></label>
-                <input type="text" id="apellido" name="apellido" maxlength="50" required />
-            </div>
-
-            <div class="campo">
-                <label for="tipo_donador">Tipo de donador <span class="obligatorio">*</span></label>
-                <select id="tipo_donador" name="tipo_donador" required>
+                <label for="tipoDonador">Tipo de donador <span class="obligatorio">*</span></label>
+                <select id="tipoDonador" name="tipoDonador" required>
                     <option value="">Selecciona un tipo</option>
                     <option value="Persona">Persona</option>
                     <option value="Empresa">Empresa</option>
@@ -35,18 +25,18 @@
             </div>
 
             <div class="campo">
-                <label for="telefono">Teléfono (10 dígitos) <span class="obligatorio">*</span></label>
-                <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" title="Escribe 10 dígitos, sin espacios" required />
+                <label for="calleDonador">Calle <span class="obligatorio">*</span></label>
+                <input type="text" id="calleDonador" name="calleDonador" maxlength="50" required />
             </div>
 
             <div class="campo">
-                <label for="correo">Correo <span class="obligatorio">*</span></label>
-                <input type="email" id="correo" name="correo" required />
+                <label for="numeroDonador">Número exterior <span class="obligatorio">*</span></label>
+                <input type="number" id="numeroDonador" name="numeroDonador" min="1" step="1" required />
             </div>
 
             <div class="campo">
-                <label for="direccion">Dirección <span class="obligatorio">*</span></label>
-                <textarea id="direccion" name="direccion" rows="2" maxlength="150" required></textarea>
+                <label for="cpDonador">Código postal (5 dígitos) <span class="obligatorio">*</span></label>
+                <input type="text" id="cpDonador" name="cpDonador" inputmode="numeric" pattern="[0-9]{5}" title="Escribe los 5 dígitos del código postal" required />
             </div>
 
             <p class="mensaje" id="mensaje"></p>
