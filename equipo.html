@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>Detalle del equipo | ReparaTec</title>
+    <link rel="stylesheet" href="./src/css/equipo.css" />
+</head>
+<body>
+    <include src="header.html"></include>
+
+    <main class="contenedor">
+        <p class="mensaje" id="mensaje">Cargando equipo...</p>
+
+        <section class="tarjeta" id="detalle" hidden>
+            <h1><span data-campo="marcaEquipo">Equipo</span> <span data-campo="modeloEquipo"></span></h1>
+
+            <dl class="datos">
+                <dt>Código de inventario</dt>
+                <dd data-campo="codigoInventarioEquipo"></dd>
+                <dt>Categoría</dt>
+                <dd data-campo="categoria"></dd>
+                <dt>Donación</dt>
+                <dd data-campo="donacion"></dd>
+                <dt>Número de serie</dt>
+                <dd data-campo="numeroSerieEquipo"></dd>
+                <dt>Procesador</dt>
+                <dd data-campo="procesadorEquipo"></dd>
+                <dt>Memoria RAM</dt>
+                <dd data-campo="memoriaRamEquipo"></dd>
+                <dt>Almacenamiento</dt>
+                <dd data-campo="almacenamientoEquipo"></dd>
+                <dt>Sistema operativo</dt>
+                <dd data-campo="osEquipo"></dd>
+                <dt>Fecha de registro</dt>
+                <dd data-campo="fechaRegistroEquipo"></dd>
+                <dt>Estado</dt>
+                <dd data-campo="estadoEquipo"></dd>
+            </dl>
+
+            <h2>Historial del equipo</h2>
+            <p class="mensaje" id="mensaje-historial">Cargando historial...</p>
+            <table id="tabla-historial" hidden>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Movimiento</th>
+                        <th>Descripción</th>
+                        <th>De</th>
+                        <th>A</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="formulario__acciones">
+                <a class="boton" id="enlace-editar" href="equipo-form.html">Editar</a>
+                <a class="boton boton--secundario" href="equipos.html">Volver a la lista</a>
+            </div>
+        </section>
+    </main>
+
+    <include src="footer.html"></include>
+    <script type="module" src="./src/js/equipo.js"></script>
+</body>
+</html>
