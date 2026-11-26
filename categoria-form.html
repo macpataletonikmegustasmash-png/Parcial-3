@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>Formulario de categoría | ReparaTec</title>
+    <link rel="stylesheet" href="./src/css/categoria-form.css" />
+</head>
+<body>
+    <include src="header.html"></include>
+
+    <main class="contenedor">
+        <h1 id="titulo-formulario">Agregar categoría</h1>
+
+        <form class="formulario tarjeta" id="formulario" novalidate>
+            <div class="campo">
+                <label for="nombreCategoria">Nombre de la categoría <span class="obligatorio">*</span></label>
+                <input type="text" id="nombreCategoria" name="nombreCategoria" maxlength="30" required />
+            </div>
+
+            <div class="campo">
+                <label for="descripcionCategoria">Descripción <span class="obligatorio">*</span></label>
+                <textarea id="descripcionCategoria" name="descripcionCategoria" rows="3" maxlength="200" required></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="estadoCategoria">Estado <span class="obligatorio">*</span></label>
+                <select id="estadoCategoria" name="estadoCategoria" required>
+                    <option value="">Selecciona un estado</option>
+                    <option value="Activa">Activa</option>
+                    <option value="Inactiva">Inactiva</option>
+                </select>
+            </div>
+
+            <p class="mensaje" id="mensaje"></p>
+
+            <div class="formulario__acciones">
+                <button class="boton" type="submit">Guardar</button>
+                <a class="boton boton--secundario" href="categorias.html">Cancelar</a>
+            </div>
+        </form>
+    </main>
+
+    <include src="footer.html"></include>
+    <script type="module" src="./src/js/categoria-form.js"></script>
+</body>
+</html>
