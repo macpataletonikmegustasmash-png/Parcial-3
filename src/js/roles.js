@@ -3,7 +3,7 @@ import { mostrarLista } from './helpers.js'
 
 await mostrarLista({
     obtener: obtenerRoles,
-    columnas: ['nombre_rol', 'descripcion', 'estado'],
+    columnas: ['nombreRol', 'descripcionRol', 'estadoRol'],
     detalle: 'rol-form.html',
     vacio: 'Todavía no hay roles registrados.',
 })
