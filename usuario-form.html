@@ -15,39 +15,49 @@
 
         <form class="formulario tarjeta" id="formulario" novalidate>
             <div class="campo">
-                <label for="nombre_usuario">Nombre de usuario <span class="obligatorio">*</span></label>
-                <input type="text" id="nombre_usuario" name="nombre_usuario" maxlength="30" required />
+                <label for="nombreUsuario">Nombre <span class="obligatorio">*</span></label>
+                <input type="text" id="nombreUsuario" name="nombreUsuario" maxlength="50" required />
             </div>
 
             <div class="campo">
-                <label for="correo">Correo <span class="obligatorio">*</span></label>
-                <input type="email" id="correo" name="correo" required />
+                <label for="apUsuario">Apellido paterno <span class="obligatorio">*</span></label>
+                <input type="text" id="apUsuario" name="apUsuario" maxlength="50" required />
             </div>
 
             <div class="campo">
-                <label for="contrasena">Contraseña (mínimo 8 caracteres) <span class="obligatorio">*</span></label>
-                <input type="password" id="contrasena" name="contrasena" minlength="8" autocomplete="new-password" required />
+                <label for="amUsuario">Apellido materno <span class="obligatorio">*</span></label>
+                <input type="text" id="amUsuario" name="amUsuario" maxlength="50" required />
+            </div>
+
+            <div class="campo">
+                <label for="correoUsuario">Correo <span class="obligatorio">*</span></label>
+                <input type="email" id="correoUsuario" name="correoUsuario" maxlength="50" required />
+            </div>
+
+            <div class="campo">
+                <label for="contrasenaUsuario">Contraseña (mínimo 8 caracteres) <span class="obligatorio">*</span></label>
+                <input type="password" id="contrasenaUsuario" name="contrasenaUsuario" minlength="8" autocomplete="new-password" required />
                 <p class="mensaje" id="ayuda-contrasena"></p>
             </div>
 
             <div class="campo">
-                <label for="telefono">Teléfono (10 dígitos) <span class="obligatorio">*</span></label>
-                <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" title="Escribe 10 dígitos, sin espacios" required />
+                <label for="telefonoUsuario">Teléfono (10 dígitos) <span class="obligatorio">*</span></label>
+                <input type="tel" id="telefonoUsuario" name="telefonoUsuario" pattern="[0-9]{10}" title="Escribe 10 dígitos, sin espacios" required />
             </div>
 
             <div class="campo">
-                <label for="id_rol">Rol <span class="obligatorio">*</span></label>
-                <select id="id_rol" name="id_rol" required>
+                <label for="ID_rol">Rol <span class="obligatorio">*</span></label>
+                <select id="ID_rol" name="ID_rol" required>
                     <option value="">Selecciona un rol</option>
                 </select>
             </div>
 
             <div class="campo">
-                <label for="estado">Estado <span class="obligatorio">*</span></label>
-                <select id="estado" name="estado" required>
+                <label for="estadoUsuario">Estado <span class="obligatorio">*</span></label>
+                <select id="estadoUsuario" name="estadoUsuario" required>
                     <option value="">Selecciona un estado</option>
                     <option value="Activo">Activo</option>
-                    <option value="Inactivo">Inactivo</option>
+                    <option value="Baja">Baja</option>
                 </select>
             </div>
 

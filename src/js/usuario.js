@@ -2,8 +2,12 @@ import { obtenerUsuario, obtenerRol } from './datos.js'
 import { mostrarDetalle } from './helpers.js'
 
 async function conRol(usuario) {
-    const rol = await obtenerRol(usuario.id_rol)
-    return { ...usuario, rol: rol ? rol.nombre_rol : 'Sin rol' }
+    const rol = await obtenerRol(usuario.ID_rol)
+    return {
+        ...usuario,
+        nombreCompleto: `${usuario.nombreUsuario} ${usuario.apUsuario} ${usuario.amUsuario}`,
+        rol: rol ? rol.nombreRol : 'Sin rol',
+    }
 }
 
 const usuario = await mostrarDetalle({
