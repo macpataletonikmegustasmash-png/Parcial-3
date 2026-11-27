@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>Formulario de beneficiario | ReparaTec</title>
+    <link rel="stylesheet" href="./src/css/beneficiario-form.css" />
+</head>
+<body>
+    <include src="header.html"></include>
+
+    <main class="contenedor">
+        <h1 id="titulo-formulario">Agregar beneficiario</h1>
+
+        <form class="formulario tarjeta" id="formulario" novalidate>
+            <div class="campo">
+                <label for="tipoBeneficiario">Tipo de beneficiario <span class="obligatorio">*</span></label>
+                <select id="tipoBeneficiario" name="tipoBeneficiario" required>
+                    <option value="">Selecciona un tipo</option>
+                    <option value="Persona">Persona</option>
+                    <option value="Escuela">Escuela</option>
+                    <option value="Organización">Organización</option>
+                    <option value="Institución">Institución</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="institucionBeneficiario">Institución o persona <span class="obligatorio">*</span></label>
+                <input type="text" id="institucionBeneficiario" name="institucionBeneficiario" maxlength="50" required />
+            </div>
+
+            <div class="campo">
+                <label for="necesidadBeneficiario">Necesidad tecnológica <span class="obligatorio">*</span></label>
+                <textarea id="necesidadBeneficiario" name="necesidadBeneficiario" rows="3" maxlength="200" required></textarea>
+            </div>
+
+            <p class="mensaje" id="mensaje"></p>
+
+            <div class="formulario__acciones">
+                <button class="boton" type="submit">Guardar</button>
+                <a class="boton boton--secundario" href="beneficiarios.html">Cancelar</a>
+            </div>
+        </form>
+    </main>
+
+    <include src="footer.html"></include>
+    <script type="module" src="./src/js/beneficiario-form.js"></script>
+</body>
+</html>

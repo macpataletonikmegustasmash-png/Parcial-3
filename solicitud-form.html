@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>Formulario de solicitud | ReparaTec</title>
+    <link rel="stylesheet" href="./src/css/solicitud-form.css" />
+</head>
+<body>
+    <include src="header.html"></include>
+
+    <main class="contenedor">
+        <h1 id="titulo-formulario">Agregar solicitud</h1>
+
+        <form class="formulario tarjeta" id="formulario" novalidate>
+            <div class="campo">
+                <label for="ID_beneficiario">Beneficiario <span class="obligatorio">*</span></label>
+                <select id="ID_beneficiario" name="ID_beneficiario" required>
+                    <option value="">Selecciona un beneficiario</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="fechaSolicitud">Fecha de la solicitud <span class="obligatorio">*</span></label>
+                <input type="date" id="fechaSolicitud" name="fechaSolicitud" required />
+            </div>
+
+            <div class="campo">
+                <label for="motivoSolicitud">Motivo <span class="obligatorio">*</span></label>
+                <textarea id="motivoSolicitud" name="motivoSolicitud" rows="3" maxlength="200" required></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="usoDestinadoSolicitud">Uso destinado <span class="obligatorio">*</span></label>
+                <input type="text" id="usoDestinadoSolicitud" name="usoDestinadoSolicitud" maxlength="30" placeholder="Clases en el salón" required />
+            </div>
+
+            <div class="campo">
+                <label for="prioridadSolicitud">Prioridad <span class="obligatorio">*</span></label>
+                <select id="prioridadSolicitud" name="prioridadSolicitud" required>
+                    <option value="">Selecciona una prioridad</option>
+                    <option value="Alta">Alta</option>
+                    <option value="Media">Media</option>
+                    <option value="Baja">Baja</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="estadoSolicitud">Estado <span class="obligatorio">*</span></label>
+                <select id="estadoSolicitud" name="estadoSolicitud" required>
+                    <option value="">Selecciona un estado</option>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="Aprobada">Aprobada</option>
+                    <option value="Rechazada">Rechazada</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="observacionesSolicitud">Observaciones</label>
+                <textarea id="observacionesSolicitud" name="observacionesSolicitud" rows="2" maxlength="200"></textarea>
+            </div>
+
+            <p class="mensaje" id="mensaje"></p>
+
+            <div class="formulario__acciones">
+                <button class="boton" type="submit">Guardar</button>
+                <a class="boton boton--secundario" href="solicitudes.html">Cancelar</a>
+            </div>
+        </form>
+    </main>
+
+    <include src="footer.html"></include>
+    <script type="module" src="./src/js/solicitud-form.js"></script>
+</body>
+</html>

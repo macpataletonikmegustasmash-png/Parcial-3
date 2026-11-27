@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>Detalle del diagnóstico | ReparaTec</title>
+    <link rel="stylesheet" href="./src/css/diagnostico.css" />
+</head>
+<body>
+    <include src="header.html"></include>
+
+    <main class="contenedor">
+        <p class="mensaje" id="mensaje">Cargando diagnóstico...</p>
+
+        <section class="tarjeta" id="detalle" hidden>
+            <h1>Diagnóstico #<span data-campo="id"></span></h1>
+
+            <dl class="datos">
+                <dt>Equipo</dt>
+                <dd data-campo="equipo"></dd>
+                <dt>Técnico</dt>
+                <dd data-campo="tecnico"></dd>
+                <dt>Fecha</dt>
+                <dd data-campo="fechaDiagnostico"></dd>
+                <dt>Problema detectado</dt>
+                <dd data-campo="problemaDiagnostico"></dd>
+                <dt>Reparación requerida</dt>
+                <dd data-campo="reparacionDiagnostico"></dd>
+                <dt>Estado</dt>
+                <dd data-campo="estadoDiagnostico"></dd>
+                <dt>Observaciones</dt>
+                <dd data-campo="observacionesDiagnostico"></dd>
+            </dl>
+
+            <h2>Reparaciones de este diagnóstico</h2>
+            <p class="mensaje" id="mensaje-reparaciones">Cargando reparaciones...</p>
+            <table id="tabla-reparaciones" hidden>
+                <thead>
+                    <tr>
+                        <th>Trabajo</th>
+                        <th>Inicio</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="formulario__acciones">
+                <a class="boton" id="enlace-editar" href="diagnostico-form.html">Editar</a>
+                <a class="boton boton--secundario" href="diagnosticos.html">Volver a la lista</a>
+            </div>
+        </section>
+    </main>
+
+    <include src="footer.html"></include>
+    <script type="module" src="./src/js/diagnostico.js"></script>
+</body>
+</html>

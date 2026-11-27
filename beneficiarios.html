@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>Beneficiarios | ReparaTec</title>
+    <link rel="stylesheet" href="./src/css/beneficiarios.css" />
+</head>
+<body>
+    <include src="header.html"></include>
+
+    <main class="contenedor">
+        <div class="encabezado-pagina">
+            <h1>Beneficiarios</h1>
+            <a class="boton" href="beneficiario-form.html">Agregar beneficiario</a>
+        </div>
+
+        <p class="mensaje" id="mensaje">Cargando beneficiarios...</p>
+
+        <table id="tabla" hidden>
+            <thead>
+                <tr>
+                    <th>Institución o persona</th>
+                    <th>Tipo</th>
+                    <th>Necesidad</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </main>
+
+    <include src="footer.html"></include>
+    <script type="module" src="./src/js/beneficiarios.js"></script>
+</body>
+</html>

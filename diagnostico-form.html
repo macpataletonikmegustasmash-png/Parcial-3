@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>Formulario de diagnóstico | ReparaTec</title>
+    <link rel="stylesheet" href="./src/css/diagnostico-form.css" />
+</head>
+<body>
+    <include src="header.html"></include>
+
+    <main class="contenedor">
+        <h1 id="titulo-formulario">Agregar diagnóstico</h1>
+
+        <form class="formulario tarjeta" id="formulario" novalidate>
+            <div class="campo">
+                <label for="ID_equipo">Equipo <span class="obligatorio">*</span></label>
+                <select id="ID_equipo" name="ID_equipo" required>
+                    <option value="">Selecciona un equipo</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="ID_tecnico">Técnico <span class="obligatorio">*</span></label>
+                <select id="ID_tecnico" name="ID_tecnico" required>
+                    <option value="">Selecciona un técnico</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="fechaDiagnostico">Fecha del diagnóstico <span class="obligatorio">*</span></label>
+                <input type="date" id="fechaDiagnostico" name="fechaDiagnostico" required />
+            </div>
+
+            <div class="campo">
+                <label for="problemaDiagnostico">Problema detectado <span class="obligatorio">*</span></label>
+                <textarea id="problemaDiagnostico" name="problemaDiagnostico" rows="3" maxlength="200" required></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="reparacionDiagnostico">Reparación requerida <span class="obligatorio">*</span></label>
+                <input type="text" id="reparacionDiagnostico" name="reparacionDiagnostico" maxlength="100" required />
+            </div>
+
+            <div class="campo">
+                <label for="estadoDiagnostico">Estado <span class="obligatorio">*</span></label>
+                <select id="estadoDiagnostico" name="estadoDiagnostico" required>
+                    <option value="">Selecciona un estado</option>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="En proceso">En proceso</option>
+                    <option value="Completado">Completado</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="observacionesDiagnostico">Observaciones</label>
+                <textarea id="observacionesDiagnostico" name="observacionesDiagnostico" rows="2" maxlength="200"></textarea>
+            </div>
+
+            <p class="mensaje" id="mensaje"></p>
+
+            <div class="formulario__acciones">
+                <button class="boton" type="submit">Guardar</button>
+                <a class="boton boton--secundario" href="diagnosticos.html">Cancelar</a>
+            </div>
+        </form>
+    </main>
+
+    <include src="footer.html"></include>
+    <script type="module" src="./src/js/diagnostico-form.js"></script>
+</body>
+</html>

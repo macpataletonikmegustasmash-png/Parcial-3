@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>Formulario de asignación | ReparaTec</title>
+    <link rel="stylesheet" href="./src/css/asignacion-form.css" />
+</head>
+<body>
+    <include src="header.html"></include>
+
+    <main class="contenedor">
+        <h1 id="titulo-formulario">Agregar asignación</h1>
+
+        <form class="formulario tarjeta" id="formulario" novalidate>
+            <div class="campo">
+                <label for="ID_solicitud">Solicitud <span class="obligatorio">*</span></label>
+                <select id="ID_solicitud" name="ID_solicitud" required>
+                    <option value="">Selecciona una solicitud</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="fechaAsignacion">Fecha de asignación <span class="obligatorio">*</span></label>
+                <input type="date" id="fechaAsignacion" name="fechaAsignacion" required />
+            </div>
+
+            <div class="campo">
+                <label for="fechaEntregaAsignacion">Fecha de entrega</label>
+                <input type="date" id="fechaEntregaAsignacion" name="fechaEntregaAsignacion" />
+            </div>
+
+            <div class="campo">
+                <label for="condicionesEntregaAsignacion">Condiciones de entrega <span class="obligatorio">*</span></label>
+                <input type="text" id="condicionesEntregaAsignacion" name="condicionesEntregaAsignacion" maxlength="50" required />
+            </div>
+
+            <div class="campo">
+                <label for="estadoAsignacion">Estado <span class="obligatorio">*</span></label>
+                <select id="estadoAsignacion" name="estadoAsignacion" required>
+                    <option value="">Selecciona un estado</option>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="Entregada">Entregada</option>
+                    <option value="Cancelada">Cancelada</option>
+                </select>
+            </div>
+
+            <p class="mensaje" id="mensaje"></p>
+
+            <div class="formulario__acciones">
+                <button class="boton" type="submit">Guardar</button>
+                <a class="boton boton--secundario" href="asignaciones.html">Cancelar</a>
+            </div>
+        </form>
+    </main>
+
+    <include src="footer.html"></include>
+    <script type="module" src="./src/js/asignacion-form.js"></script>
+</body>
+</html>

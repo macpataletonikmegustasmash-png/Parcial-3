@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>Formulario de evaluación | ReparaTec</title>
+    <link rel="stylesheet" href="./src/css/evaluacion-form.css" />
+</head>
+<body>
+    <include src="header.html"></include>
+
+    <main class="contenedor">
+        <h1 id="titulo-formulario">Agregar evaluación</h1>
+
+        <form class="formulario tarjeta" id="formulario" novalidate>
+            <div class="campo">
+                <label for="ID_beneficiario">Beneficiario <span class="obligatorio">*</span></label>
+                <select id="ID_beneficiario" name="ID_beneficiario" required>
+                    <option value="">Selecciona un beneficiario</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="ID_donacion">Donación <span class="obligatorio">*</span></label>
+                <select id="ID_donacion" name="ID_donacion" required>
+                    <option value="">Selecciona la donación evaluada</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="fechaEvaluacion">Fecha de la evaluación <span class="obligatorio">*</span></label>
+                <input type="date" id="fechaEvaluacion" name="fechaEvaluacion" required />
+            </div>
+
+            <div class="campo">
+                <label for="estadoFuncionamientoEvaluacion">Estado de funcionamiento <span class="obligatorio">*</span></label>
+                <select id="estadoFuncionamientoEvaluacion" name="estadoFuncionamientoEvaluacion" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="Funciona correctamente">Funciona correctamente</option>
+                    <option value="Funciona con fallas menores">Funciona con fallas menores</option>
+                    <option value="No funciona">No funciona</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="calificacionEvaluacion">Calificación (1 a 10) <span class="obligatorio">*</span></label>
+                <input type="number" id="calificacionEvaluacion" name="calificacionEvaluacion" min="1" max="10" step="1" required />
+            </div>
+
+            <div class="campo">
+                <label for="observacionesEvaluacion">Observaciones</label>
+                <textarea id="observacionesEvaluacion" name="observacionesEvaluacion" rows="3" maxlength="200"></textarea>
+            </div>
+
+            <p class="mensaje" id="mensaje"></p>
+
+            <div class="formulario__acciones">
+                <button class="boton" type="submit">Guardar</button>
+                <a class="boton boton--secundario" href="evaluaciones.html">Cancelar</a>
+            </div>
+        </form>
+    </main>
+
+    <include src="footer.html"></include>
+    <script type="module" src="./src/js/evaluacion-form.js"></script>
+</body>
+</html>
