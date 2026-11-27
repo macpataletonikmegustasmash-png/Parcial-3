@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>Detalle de la solicitud | ReparaTec</title>
+    <link rel="stylesheet" href="./src/css/solicitud.css" />
+</head>
+<body>
+    <include src="header.html"></include>
+
+    <main class="contenedor">
+        <p class="mensaje" id="mensaje">Cargando solicitud...</p>
+
+        <section class="tarjeta" id="detalle" hidden>
+            <h1>Solicitud #<span data-campo="id"></span></h1>
+
+            <dl class="datos">
+                <dt>Beneficiario</dt>
+                <dd data-campo="beneficiario"></dd>
+                <dt>Fecha</dt>
+                <dd data-campo="fechaSolicitud"></dd>
+                <dt>Motivo</dt>
+                <dd data-campo="motivoSolicitud"></dd>
+                <dt>Uso destinado</dt>
+                <dd data-campo="usoDestinadoSolicitud"></dd>
+                <dt>Prioridad</dt>
+                <dd data-campo="prioridadSolicitud"></dd>
+                <dt>Estado</dt>
+                <dd data-campo="estadoSolicitud"></dd>
+                <dt>Observaciones</dt>
+                <dd data-campo="observacionesSolicitud"></dd>
+            </dl>
+
+            <div class="formulario__acciones">
+                <a class="boton" id="enlace-editar" href="solicitud-form.html">Editar</a>
+                <a class="boton boton--secundario" href="solicitudes.html">Volver a la lista</a>
+            </div>
+        </section>
+    </main>
+
+    <include src="footer.html"></include>
+    <script type="module" src="./src/js/solicitud.js"></script>
+</body>
+</html>
