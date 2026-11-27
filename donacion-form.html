@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>Formulario de donación | ReparaTec</title>
+    <link rel="stylesheet" href="./src/css/donacion-form.css" />
+</head>
+<body>
+    <include src="header.html"></include>
+
+    <main class="contenedor">
+        <h1 id="titulo-formulario">Agregar donación</h1>
+
+        <form class="formulario tarjeta" id="formulario" novalidate>
+            <div class="campo">
+                <label for="ID_donador">Donador <span class="obligatorio">*</span></label>
+                <select id="ID_donador" name="ID_donador" required>
+                    <option value="">Selecciona un donador</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="fechaDonacion">Fecha de la donación <span class="obligatorio">*</span></label>
+                <input type="date" id="fechaDonacion" name="fechaDonacion" required />
+            </div>
+
+            <div class="campo">
+                <label for="tipoEntregaDonacion">Tipo de entrega <span class="obligatorio">*</span></label>
+                <select id="tipoEntregaDonacion" name="tipoEntregaDonacion" required>
+                    <option value="">Selecciona un tipo de entrega</option>
+                    <option value="Entrega en sitio">Entrega en sitio</option>
+                    <option value="Recolección en domicilio">Recolección en domicilio</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="observacionesDonacion">Observaciones</label>
+                <textarea id="observacionesDonacion" name="observacionesDonacion" rows="3" maxlength="200"></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="estadoDonacion">Estado <span class="obligatorio">*</span></label>
+                <select id="estadoDonacion" name="estadoDonacion" required>
+                    <option value="">Selecciona un estado</option>
+                    <option value="En revisión">En revisión</option>
+                    <option value="Recibida">Recibida</option>
+                    <option value="Rechazada">Rechazada</option>
+                </select>
+            </div>
+
+            <p class="mensaje" id="mensaje"></p>
+
+            <div class="formulario__acciones">
+                <button class="boton" type="submit">Guardar</button>
+                <a class="boton boton--secundario" href="donaciones.html">Cancelar</a>
+            </div>
+        </form>
+    </main>
+
+    <include src="footer.html"></include>
+    <script type="module" src="./src/js/donacion-form.js"></script>
+</body>
+</html>

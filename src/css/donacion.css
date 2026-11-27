@@ -1,0 +1,10 @@
+@import './global.css';
+
+/* Separa la segunda tabla de los datos y de los botones */
+#detalle h2 {
+    margin-top: 32px;
+}
+
+#detalle .formulario__acciones {
+    margin-top: 24px;
+}

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>Formulario de equipo | ReparaTec</title>
+    <link rel="stylesheet" href="./src/css/equipo-form.css" />
+</head>
+<body>
+    <include src="header.html"></include>
+
+    <main class="contenedor">
+        <h1 id="titulo-formulario">Agregar equipo</h1>
+
+        <form class="formulario tarjeta" id="formulario" novalidate>
+            <div class="campo">
+                <label for="ID_donacion">Donación <span class="obligatorio">*</span></label>
+                <select id="ID_donacion" name="ID_donacion" required>
+                    <option value="">Selecciona la donación de la que viene</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="ID_categoria">Categoría <span class="obligatorio">*</span></label>
+                <select id="ID_categoria" name="ID_categoria" required>
+                    <option value="">Selecciona una categoría</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="codigoInventarioEquipo">Código de inventario <span class="obligatorio">*</span></label>
+                <input type="number" id="codigoInventarioEquipo" name="codigoInventarioEquipo" min="1" step="1" required />
+            </div>
+
+            <div class="campo">
+                <label for="marcaEquipo">Marca <span class="obligatorio">*</span></label>
+                <input type="text" id="marcaEquipo" name="marcaEquipo" maxlength="30" required />
+            </div>
+
+            <div class="campo">
+                <label for="modeloEquipo">Modelo <span class="obligatorio">*</span></label>
+                <input type="text" id="modeloEquipo" name="modeloEquipo" maxlength="30" required />
+            </div>
+
+            <div class="campo">
+                <label for="numeroSerieEquipo">Número de serie <span class="obligatorio">*</span></label>
+                <input type="text" id="numeroSerieEquipo" name="numeroSerieEquipo" maxlength="30" required />
+            </div>
+
+            <div class="campo">
+                <label for="procesadorEquipo">Procesador <span class="obligatorio">*</span></label>
+                <input type="text" id="procesadorEquipo" name="procesadorEquipo" maxlength="30" required />
+            </div>
+
+            <div class="campo">
+                <label for="memoriaRamEquipo">Memoria RAM <span class="obligatorio">*</span></label>
+                <input type="text" id="memoriaRamEquipo" name="memoriaRamEquipo" maxlength="30" placeholder="8 GB DDR4" required />
+            </div>
+
+            <div class="campo">
+                <label for="almacenamientoEquipo">Almacenamiento <span class="obligatorio">*</span></label>
+                <input type="text" id="almacenamientoEquipo" name="almacenamientoEquipo" maxlength="10" placeholder="256GB SSD" required />
+            </div>
+
+            <div class="campo">
+                <label for="osEquipo">Sistema operativo <span class="obligatorio">*</span></label>
+                <input type="text" id="osEquipo" name="osEquipo" maxlength="30" required />
+            </div>
+
+            <div class="campo">
+                <label for="fechaRegistroEquipo">Fecha de registro <span class="obligatorio">*</span></label>
+                <input type="date" id="fechaRegistroEquipo" name="fechaRegistroEquipo" required />
+            </div>
+
+            <div class="campo">
+                <label for="estadoEquipo">Estado <span class="obligatorio">*</span></label>
+                <select id="estadoEquipo" name="estadoEquipo" required>
+                    <option value="">Selecciona un estado</option>
+                    <option value="Pendiente de diagnóstico">Pendiente de diagnóstico</option>
+                    <option value="En reparación">En reparación</option>
+                    <option value="Disponible">Disponible</option>
+                    <option value="Asignado">Asignado</option>
+                </select>
+            </div>
+
+            <p class="mensaje" id="mensaje"></p>
+
+            <div class="formulario__acciones">
+                <button class="boton" type="submit">Guardar</button>
+                <a class="boton boton--secundario" href="equipos.html">Cancelar</a>
+            </div>
+        </form>
+    </main>
+
+    <include src="footer.html"></include>
+    <script type="module" src="./src/js/equipo-form.js"></script>
+</body>
+</html>

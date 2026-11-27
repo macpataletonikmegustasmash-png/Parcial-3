@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/logo.svg" />
+    <title>Equipos | ReparaTec</title>
+    <link rel="stylesheet" href="./src/css/equipos.css" />
+</head>
+<body>
+    <include src="header.html"></include>
+
+    <main class="contenedor">
+        <div class="encabezado-pagina">
+            <h1>Equipos</h1>
+            <a class="boton" href="equipo-form.html">Agregar equipo</a>
+        </div>
+
+        <p class="mensaje" id="mensaje">Cargando equipos...</p>
+
+        <table id="tabla" hidden>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Categoría</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </main>
+
+    <include src="footer.html"></include>
+    <script type="module" src="./src/js/equipos.js"></script>
+</body>
+</html>
